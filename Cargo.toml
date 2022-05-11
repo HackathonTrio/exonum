@@ -31,4 +31,4 @@ members = [
     "components/proto",
     "components/system-api",
 ]
-exclude = [ "exonum/fuzz" ]
+exclude = [ "exonum/fuzz", "exonum/fuzz/*" ]
