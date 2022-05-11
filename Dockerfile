@@ -12,8 +12,7 @@ RUN ${HOME}/.cargo/bin/cargo install -f cargo-fuzz
 ADD . /exonum
 WORKDIR /exonum
 
-RUN chmod +x exonum/fuzz
-RUN exonum/fuzz && ${HOME}/.cargo/bin/cargo fuzz build
+RUN cd exonum/fuzz && ${HOME}/.cargo/bin/cargo fuzz build
 
 # Package Stage
 FROM ubuntu:20.04
