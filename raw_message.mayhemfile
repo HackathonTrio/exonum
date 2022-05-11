@@ -1,5 +1,5 @@
 project: exonum
-target: raw_message
+target: exonum
 
 cmds:
     - cmd: /raw_message
