@@ -11,10 +11,11 @@ RUN ${HOME}/.cargo/bin/cargo install -f cargo-fuzz
 ## Add source code to the build stage.
 ADD . /exonum
 WORKDIR /exonum
-RUN ${HOME}/.cargo/bin/cargo build
-RUN cd exonum && ${HOME}/.cargo/bin/cargo build && ${HOME}/.cargo/bin/cargo fuzz build --fuzz-dir ./fuzz
+
+RUN exonum/fuzz && ${HOME}/.cargo/bin/cargo fuzz build
 
 # Package Stage
 FROM ubuntu:20.04
 
-COPY --from=builder exonum/exonum/fuzz/target/x86_64-unknown-linux-gnu/release/* /
+COPY --from=builder exonum/exonum/fuzz/target/x86_64-unknown-linux-gnu/release/raw_message  /
+
