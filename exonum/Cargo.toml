@@ -69,6 +69,3 @@ exonum-build = { version = "1.0.1", path = "../components/build" }
 
 [package.metadata.docs.rs]
 dependencies = [ "protobuf-compiler" ]
-
-[workspace]
-exclude = [ "fuzz" ]
