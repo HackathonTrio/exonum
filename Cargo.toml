@@ -1,7 +1,7 @@
 [workspace]
 members = [
     "cli",
-    "exonum",
+    "exonum/*",
     "exonum-node",
 
     "examples/cryptocurrency",
